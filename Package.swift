@@ -19,7 +19,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git",
+        .package(url: "https://github.com/sjavora/swift-syntax-xcframeworks.git",
                  from: "509.0.0"),
         .package(url: "https://github.com/apple/swift-algorithms",
                  from: "1.1.0")
@@ -36,12 +36,8 @@ let package = Package(
         .macro(
             name: "ObfuscateMacroPlugin",
             dependencies: [
-                .product(name: "SwiftSyntax", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
-                .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
+                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
                 "ObfuscateSupport"
             ]
         ),
@@ -49,11 +45,7 @@ let package = Package(
         .testTarget(
             name: "ObfuscateMacroTests",
             dependencies: [
-                .product(name: "SwiftSyntax", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
                 "ObfuscateMacro",
                 "ObfuscateMacroPlugin"
             ]
