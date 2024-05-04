@@ -39,7 +39,7 @@ let package = Package(
             dependencies: [
                 //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
-                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
+                .product(name: "SwiftSyntaxWrapper", package: "framework-ios-swift-syntax"),
                 "ObfuscateSupport"
             ]
         ),
@@ -49,7 +49,7 @@ let package = Package(
             dependencies: [
                 //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
-                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
+                .product(name: "SwiftSyntaxWrapper", package: "framework-ios-swift-syntax"),
                 "ObfuscateMacro",
                 "ObfuscateMacroPlugin"
             ]
