@@ -6,11 +6,7 @@ import CompilerPluginSupport
 let package = Package(
     name: "ObfuscateMacro",
     platforms: [
-        .macOS(.v10_15),
-        .iOS(.v13),
-        .tvOS(.v13),
-        .watchOS(.v6),
-        .macCatalyst(.v13)
+        .macOS(.v10_15)
     ],
     products: [
         .library(
@@ -28,6 +24,7 @@ let package = Package(
         .target(
             name: "ObfuscateMacro",
             dependencies: [
+                //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 "ObfuscateMacroPlugin",
                 "ObfuscateSupport"
@@ -36,6 +33,7 @@ let package = Package(
         .macro(
             name: "ObfuscateMacroPlugin",
             dependencies: [
+                //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
                 "ObfuscateSupport"
@@ -45,10 +43,19 @@ let package = Package(
         .testTarget(
             name: "ObfuscateMacroTests",
             dependencies: [
+                //.byName(name: "Algorithms"),
+                .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
                 "ObfuscateMacro",
                 "ObfuscateMacroPlugin"
             ]
         ),
+       /*
+            .binaryTarget(
+                name: "Algorithms",
+                path: "Algorithms.xcframework"
+            )
+        */
+            
     ]
 )
