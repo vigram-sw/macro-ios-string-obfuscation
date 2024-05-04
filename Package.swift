@@ -6,7 +6,11 @@ import CompilerPluginSupport
 let package = Package(
     name: "ObfuscateMacro",
     platforms: [
-        .macOS(.v10_15)
+        .macOS(.v10_15),
+        .iOS(.v13),
+        .tvOS(.v13),
+        .watchOS(.v6),
+        .macCatalyst(.v13)
     ],
     products: [
         .library(
