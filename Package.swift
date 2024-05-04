@@ -19,8 +19,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/vigram-sw/framework-ios-swift-syntax.git",
-                 from: "509.0.0"),
+        .package(url: "https://github.com/vigram-sw/framework-ios-swift-syntax.git", .upToNextMajor(from: "509.0.2")),
         .package(url: "https://github.com/apple/swift-algorithms",
                  from: "1.1.0")
     ],
